@@ -376,3 +376,9 @@ There are three docker images that can be used to run the code:
 * **[tscholak/text-to-sql-eval](https://hub.docker.com/repository/docker/tscholak/text-to-sql-eval):** Training/evaluation image with all dependencies. Use this for evaluating a fine-tuned model with Picard. This image can also be used for training if you want to run evaluation during training with Picard. Pull it with `make pull-eval-image` from the docker hub. Rebuild the image with `make build-eval-image`.
 
 All images are tagged with the current commit hash. The images are built with the buildx tool which is available in the latest docker-ce. Use `make init-buildkit` to initialize the buildx tool on your machine. You can then use `make build-dev-image`, `make build-train-image`, etc. to rebuild the images. Local changes to the code will not be reflected in the docker images unless they are committed to git.
+
+### Running on Local
+* Adding Database files
+  * Create a sample sql file with create and insert statements.
+  * To create a sqlite file from above file install [sqlite3](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-sqlite-on-ubuntu-20-04) and run `sqlite3 output_filename.sqlite < schema.sql`
+  * Put these files inside one folder and keep that folder inside `database` folder.
