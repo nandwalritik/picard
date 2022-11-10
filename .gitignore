@@ -147,5 +147,5 @@ train/*
 eval/*
 transformers_cache/*
 wandb/*
-database/*
+# database/*
 .DS_Store
