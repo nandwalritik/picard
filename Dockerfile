@@ -346,3 +346,5 @@ COPY --chown=$TOOLKIT_USER_ID:$TOOLKIT_GROUP_ID ./configs /app/configs/
 RUN python /app/tests/test_picard_client.py \
     && rm -rf /app/seq2seq/__pycache__ \
     && rm -rf /app/gen-py3/picard/__pycache__
+
+RUN mkdir -p -m 777 transformers_cache
